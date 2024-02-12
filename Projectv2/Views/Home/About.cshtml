@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Projectv2.ViewModels.AuthorsGroup>
+
+
+@{
+    ViewBag.Title = "Authors book statistics";
+}
+<h2>Authors book statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Authors
+        </th>
+        <th>
+            Books
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Writer)
+                    </td>
+                    <td>
+                        @item.BooksCount
+                    </td>
+                </tr>
+            }
+</table>

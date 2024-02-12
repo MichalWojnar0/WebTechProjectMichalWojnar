@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Publishing House</h1>
+    <p class="lead">Thank you, for choosing our site, we hope u will like it!</p>
+    <button onclick="copyLinkToClipboard()" class="btn btn-primary btn-lg">Copy Link &raquo;</button>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Check the websites of our partners</h2>
+        <p>
+            <b>Lubimy czytac</b> This is the website that helps
+            people to check and review other books.
+        </p>
+        <p>
+            <a class="btn btn-default"
+               href="https://lubimyczytac.pl">
+                Learn
+                more &raquo;
+            </a>
+        </p>
+    </div>
+</div>
+<script>
+    function copyLinkToClipboard() {
+        var link = "https://localhost:44307/Home/Index";
+        navigator.clipboard.writeText(link).then(function () {
+            alert("Link copied to clipboard: " + link);
+        }, function () {
+            alert("Unable to copy link to clipboard. Please try again.");
+        });
+    }
+</script>

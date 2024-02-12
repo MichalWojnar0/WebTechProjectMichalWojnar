@@ -1,0 +1,74 @@
+﻿@model Projectv2.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginalLanguage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OriginalLanguage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Writer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Writer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishingDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Authors)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Authors Information</th> <th>Genre</th> </tr>
+                    @foreach (var item in Model.Authors)
+                    {
+                        <tr>
+                            <td> @Html.DisplayFor(modelItem => item.AuthorID) </td>
+                            <td> @Html.DisplayFor(modelItem => item.Genre.MonthReaders) </td>
+                        </tr>
+                    }
+            </table>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
